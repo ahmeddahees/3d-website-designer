@@ -24,7 +24,12 @@
   <nav class="navbar">
     <div class="container-fluid navbar-container">
       <a href="#" class="logo">3D Design <span>Pro</span></a>
-      <ul class="nav-menu">
+      <button class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
         <li><a href="#home">الرئيسية</a></li>
         <li><a href="#services">الخدمات</a></li>
         <li><a href="#about">من نحن</a></li>
@@ -104,7 +109,7 @@
           <div class="showcase-image">
             <img src="./img/1.jpg" alt="عمل 3D">
             <div class="overlay">
-              <a href="#" class="view-btn">عرض التفاصيل</a>
+              <a href="#" class="view-btn" data-img="./img/1.jpg">عرض التفاصيل</a>
             </div>
           </div>
           <h3>تصميم شخصية 3D</h3>
@@ -115,7 +120,7 @@
           <div class="showcase-image">
             <img src="./img/2.jpg" alt="عمل 3D">
             <div class="overlay">
-              <a href="#" class="view-btn">عرض التفاصيل</a>
+              <a href="#" class="view-btn" data-img="./img/2.jpg">عرض التفاصيل</a>
             </div>
           </div>
           <h3>منتج قابل للتحريك</h3>
@@ -126,7 +131,7 @@
           <div class="showcase-image">
             <img src="./img/3.jpg" alt="عمل 3D">
             <div class="overlay">
-              <a href="#" class="view-btn">عرض التفاصيل</a>
+              <a href="#" class="view-btn" data-img="./img/3.jpg">عرض التفاصيل</a>
             </div>
           </div>
           <h3>بيئة افتراضية</h3>
@@ -135,6 +140,15 @@
       </div>
     </div>
   </section>
+
+  <!-- Image Modal -->
+  <div id="image-modal" class="image-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <img id="modal-image" src="" alt="">
+    </div>
+  </div>
 
   <!-- CTA Section -->
   <section class="cta-section">

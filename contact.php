@@ -13,7 +13,12 @@
   <nav class="navbar">
     <div class="container-fluid navbar-container">
       <a href="/" class="logo">3D Design <span>Pro</span></a>
-      <ul class="nav-menu">
+      <button class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
         <li><a href="index.php">الرئيسية</a></li>
         <li><a href="services.php">الخدمات</a></li>
         <li><a href="about.php">من نحن</a></li>

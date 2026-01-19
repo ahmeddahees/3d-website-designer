@@ -253,6 +253,41 @@ function init3DScene() {
 document.addEventListener('DOMContentLoaded', () => {
     init3DScene();
 
+    // ==================== IMAGE MODAL ====================
+    const modal = document.getElementById('image-modal');
+    const modalImage = document.getElementById('modal-image');
+    const modalClose = document.querySelector('.modal-close');
+    const viewBtns = document.querySelectorAll('.view-btn');
+
+    viewBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const imgSrc = btn.getAttribute('data-img');
+            modalImage.src = imgSrc;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target.classList.contains('modal-overlay')) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
     // ==================== INTERACTIVE VISUAL EFFECTS ====================
 
     // Add glow effect tracking to cards
@@ -360,8 +395,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==================== HAMBURGER MENU ====================
 
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
 
     if (navToggle) {
         navToggle.addEventListener('click', () => {
